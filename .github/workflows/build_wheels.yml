@@ -5,7 +5,7 @@ on: [push, pull_request]
 jobs:
   make_sdist:
     name: Make SDist
-    runs-on: ubuntu-latest
+    runs-on: magnon-enterprise-runners
     steps:
     - uses: actions/checkout@v3
       with:
@@ -45,7 +45,7 @@ jobs:
 
   upload_all:
     needs: [build_wheels, make_sdist]
-    runs-on: ubuntu-latest
+    runs-on: magnon-enterprise-runners
     if: github.event_name == 'release' && github.event.action == 'published'
     steps:
     - uses: actions/download-artifact@v3
