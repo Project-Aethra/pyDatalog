@@ -1,4 +1,8 @@
+# Copyright (c) Magnon Compute Corporation. All rights reserved.
 name: Build
+
+permissions:
+  contents: read
 
 on: [push, pull_request]
 
@@ -6,6 +10,7 @@ jobs:
   make_sdist:
     name: Make SDist
     runs-on: magnon-enterprise-runners
+    timeout-minutes: 30
     steps:
     - uses: actions/checkout@v3
       with:
@@ -22,7 +27,9 @@ jobs:
   build_wheels:
     name: Build wheels on ${{ matrix.os }}
     runs-on: ${{ matrix.os }}
+    timeout-minutes: 60
     strategy:
+      fail-fast: false
       matrix:
         os: [ubuntu-20.04, windows-2019, macos-11]
 
@@ -43,17 +50,7 @@ jobs:
         with:
           path: ./wheelhouse/*.whl
 
-  upload_all:
-    needs: [build_wheels, make_sdist]
-    runs-on: magnon-enterprise-runners
-    if: github.event_name == 'release' && github.event.action == 'published'
-    steps:
-    - uses: actions/download-artifact@v3
-      with:
-        name: artifact
-        path: dist
-
-    - uses: pypa/gh-action-pypi-publish@v1.5.0
-      with:
-        user: __token__
-        password: ${{ secrets.pypi_password }}
+  # REMOVED: upload_all job (pypa/gh-action-pypi-publish to public pypi.org).
+  # No-public-publishing policy: all code is private.
+  # Never publish to public PyPI, npm, crates.io, or any public registry.
+  # If package distribution is needed, use the private Magnon registry (PRIVATE_PYPI_URL).

@@ -1,3 +1,5 @@
+# Copyright (c) 2024-2026 Magnon Compute Corporation. All Rights Reserved.
+
 """
 This file contains the code for the interactive online datalog tutorial.
 https://sites.google.com/site/pydatalog/Online-datalog-tutorial

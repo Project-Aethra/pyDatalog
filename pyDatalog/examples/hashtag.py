@@ -1,3 +1,5 @@
+# Copyright (c) 2024-2026 Magnon Compute Corporation. All Rights Reserved.
+
 '''
 Created on 2 avr. 2013
 

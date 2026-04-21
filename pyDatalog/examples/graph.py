@@ -1,3 +1,5 @@
+# Copyright (c) 2024-2026 Magnon Compute Corporation. All Rights Reserved.
+
 """
 This file illustrates algorithms that can be used with graphs, trees, hierarchies, ...
 

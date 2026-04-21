@@ -821,7 +821,7 @@ def add_program(func):
 
     try:
         code = func.__code__
-    except:
+    except Exception:
         raise TypeError("function or method argument expected")
     newglobals = func.__globals__.copy() if PY3 else func.func_globals.copy()
     func_name = func.__name__ if PY3 else func.func_name

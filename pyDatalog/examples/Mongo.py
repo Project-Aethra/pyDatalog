@@ -1,3 +1,5 @@
+# Copyright (c) 2024-2026 Magnon Compute Corporation. All Rights Reserved.
+
 """
 This file shows how to use pyDatalog to query 
 a relational database and a noSQL database simultaneously.

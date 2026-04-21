@@ -1,3 +1,5 @@
+# Copyright (c) 2024-2026 Magnon Compute Corporation. All Rights Reserved.
+
 """A more or less complete user-defined wrapper around list objects."""
 
 import collections
