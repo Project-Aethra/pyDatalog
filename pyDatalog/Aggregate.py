@@ -35,7 +35,7 @@ from itertools import groupby
 try:
     import statistics
     mean = statistics.mean
-except:
+except Exception:
     def mean(aList):
         return sum(aList) / len(aList)
 

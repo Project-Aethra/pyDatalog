@@ -16,11 +16,26 @@ Upstream: https://github.com/pcarbonn/pyDatalog (unmaintained)
 - Python (Datalog engine)
 - Note: unmaintained upstream — use only for existing integrations
 
-## Dev commands
+## Quick Start / Dev commands
 
 ```bash
+# Install (editable)
 pip install -e .
+
+# Install with dev dependencies
+pip install -e '.[dev]'
+
+# Smoke check
 python -c "from pyDatalog import pyDatalog; print('OK')"
+
+# Run a module
+python -m <module>
+```
+
+## Testing
+
+```bash
+pytest
 ```
 
 ## Key conventions
